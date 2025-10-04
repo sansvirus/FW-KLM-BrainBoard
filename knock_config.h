@@ -21,4 +21,4 @@
 
 	#define KNOCK_SAMPLE_TIME ADC_SAMPLE_84
 	#define KNOCK_SAMPLE_RATE (STM32_PCLK2 / (4 * (84 + 12)))
-#endif
+
