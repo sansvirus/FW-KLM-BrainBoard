@@ -31,13 +31,7 @@ engineConfiguration->can2RxPin = Gpio::B12;
 engineConfiguration->can2TxPin = Gpio::B13;
 engineConfiguration->lps25BaroSensorScl = Gpio::B10;
 engineConfiguration->lps25BaroSensorSda = Gpio::B11;
-static void setInjectorPins() {
-	copyArray(engineConfiguration->injectionPins, injPins);
-}
 
-static void setIgnitionPins() {
-	copyArray(engineConfiguration->ignitionPins, ignPins);
-}
 
 // PE3 is error LED, configured in board.mk
 Gpio getCommsLedPin() {
