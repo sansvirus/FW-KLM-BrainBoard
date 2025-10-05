@@ -2,7 +2,6 @@
 
 #define ts_show_full_pinout false
 #define ts_show_egt true
-
 #define ts_show_analog_divider false
 #define ts_show_spi true
 #define ts_show_sd_card true
@@ -14,7 +13,7 @@
 #define ts_show_sd_pins false
 #define ts_show_vbatt false
 #define ts_show_clt_iat_pullup false
-#define ts_show_gdi true
+#define ts_show_gdi false
 #define ts_show_ign_key_analog_input true
 #define CLT_TIMING_CURVE_SIZE 3
 #define IAT_IGN_CORR_COUNT 4
