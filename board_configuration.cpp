@@ -21,8 +21,6 @@ engineConfiguration->ignitionPins[0] = Gpio::G7;
 engineConfiguration->ignitionPins[0] = Gpio::G8;
 engineConfiguration->ignitionPins[0] = Gpio::C7;
 
-    setupSdCard();
-	setupVbatt();
 engineConfiguration->clt.config.bias_resistor = 2700;
 engineConfiguration->iat.config.bias_resistor = 2700;
 engineConfiguration->canTxPin = Gpio::D1;
@@ -126,7 +124,8 @@ void setup_custom_board_overrides() {
 	setInjectorPins();
 	setIgnitionPins();
 	setupEtb();
-
+	setupSdCard();
+	setupVbatt();
 	engineConfiguration->isSdCardEnabled = true;
 
 	// "required" hardware is done - set some reasonable defaults
