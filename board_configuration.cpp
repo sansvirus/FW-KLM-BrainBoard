@@ -1,28 +1,36 @@
 #include "pch.h"
 #include "board_overrides.h"
 
-static const brain_pin_e injPins[] = {
-    Gpio::E1,
-	Gpio::E0,
-	Gpio::B9,
-	Gpio::B8,
-	Gpio::B7,
-	Gpio::B6,
-	Gpio::B5,
-	Gpio::B4,
-};
+static void customBoardDefaultConfiguration() {
 
-static const brain_pin_e ignPins[] = {
-	Gpio::G2,
-	Gpio::G3,
-	Gpio::G4,
-	Gpio::G5,
-	Gpio::G6,
-	Gpio::G7,
-	Gpio::G8,
-	Gpio::C7,
-};
+engineConfiguration->injectionPins[0] = Gpio::E1;
+engineConfiguration->injectionPins[0] = Gpio::E0;
+engineConfiguration->injectionPins[0] = Gpio::B9;
+engineConfiguration->injectionPins[0] = Gpio::B8;
+engineConfiguration->injectionPins[0] = Gpio::B7;
+engineConfiguration->injectionPins[0] = Gpio::B6;
+engineConfiguration->injectionPins[0] = Gpio::B5;
+engineConfiguration->injectionPins[0] = Gpio::B4;
 
+engineConfiguration->ignitionPins[0] = Gpio::G2;
+engineConfiguration->ignitionPins[0] = Gpio::G3;
+engineConfiguration->ignitionPins[0] = Gpio::G4;
+engineConfiguration->ignitionPins[0] = Gpio::G5;
+engineConfiguration->ignitionPins[0] = Gpio::G6;
+engineConfiguration->ignitionPins[0] = Gpio::G7;
+engineConfiguration->ignitionPins[0] = Gpio::G8;
+engineConfiguration->ignitionPins[0] = Gpio::C7;
+
+    setupSdCard();
+	setupVbatt();
+engineConfiguration->clt.config.bias_resistor = 2700;
+engineConfiguration->iat.config.bias_resistor = 2700;
+engineConfiguration->canTxPin = Gpio::D1;
+engineConfiguration->canRxPin = Gpio::D0;
+engineConfiguration->can2RxPin = Gpio::B12;
+engineConfiguration->can2TxPin = Gpio::B13;
+engineConfiguration->lps25BaroSensorScl = Gpio::B10;
+engineConfiguration->lps25BaroSensorSda = Gpio::B11;
 static void setInjectorPins() {
 	copyArray(engineConfiguration->injectionPins, injPins);
 }
@@ -118,23 +126,9 @@ static void setupSdCard() {
 	engineConfiguration->spi5mosiPin = Gpio::F9;
 }
 
-static void proteus_boardConfigOverrides() {
-	setupSdCard();
-	setupVbatt();
+void setup_custom_board_overrides() {
+    custom_board_DefaultConfiguration = customBoardDefaultConfiguration;
 
-	engineConfiguration->clt.config.bias_resistor = 2700;
-	engineConfiguration->iat.config.bias_resistor = 2700;
-
-	engineConfiguration->canTxPin = Gpio::D1;
-	engineConfiguration->canRxPin = Gpio::D0;
-	engineConfiguration->can2RxPin = Gpio::B12;
-	engineConfiguration->can2TxPin = Gpio::B13;
-
-	engineConfiguration->lps25BaroSensorScl = Gpio::B10;
-	engineConfiguration->lps25BaroSensorSda = Gpio::B11;
-}
-
-static void proteus_boardDefaultConfiguration() {
 	setInjectorPins();
 	setIgnitionPins();
 	setupEtb();
@@ -145,5 +139,5 @@ static void proteus_boardDefaultConfiguration() {
 	setupDefaultSensorInputs();
 
 	engineConfiguration->enableSoftwareKnock = true;
-
+}
 
