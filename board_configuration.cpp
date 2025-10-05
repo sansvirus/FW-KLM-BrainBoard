@@ -13,8 +13,8 @@ Gpio getRunningLedPin() {
 Gpio getWarningLedPin() {
 	return Gpio::E6;
 }
-static void customBoardDefaultConfiguration() {
 
+static void setInjectorPins() {
 engineConfiguration->injectionPins[0] = Gpio::E1;
 engineConfiguration->injectionPins[0] = Gpio::E0;
 engineConfiguration->injectionPins[0] = Gpio::B9;
@@ -23,7 +23,9 @@ engineConfiguration->injectionPins[0] = Gpio::B7;
 engineConfiguration->injectionPins[0] = Gpio::B6;
 engineConfiguration->injectionPins[0] = Gpio::B5;
 engineConfiguration->injectionPins[0] = Gpio::B4;
+}
 
+static void setIgnitionPins() {
 engineConfiguration->ignitionPins[0] = Gpio::G2;
 engineConfiguration->ignitionPins[0] = Gpio::G3;
 engineConfiguration->ignitionPins[0] = Gpio::G4;
@@ -32,18 +34,12 @@ engineConfiguration->ignitionPins[0] = Gpio::G6;
 engineConfiguration->ignitionPins[0] = Gpio::G7;
 engineConfiguration->ignitionPins[0] = Gpio::G8;
 engineConfiguration->ignitionPins[0] = Gpio::C7;
+}
 
+static void setupDefaultSensorInputs() {
 engineConfiguration->clt.config.bias_resistor = 2700;
 engineConfiguration->iat.config.bias_resistor = 2700;
-engineConfiguration->canTxPin = Gpio::D1;
-engineConfiguration->canRxPin = Gpio::D0;
-engineConfiguration->can2RxPin = Gpio::B12;
-engineConfiguration->can2TxPin = Gpio::B13;
-engineConfiguration->lps25BaroSensorScl = Gpio::B10;
-engineConfiguration->lps25BaroSensorSda = Gpio::B11;
-
-
-
+}
 
 static void setupVbatt() {
 	// 5.6k high side/10k low side = 1.56 ratio divider
@@ -118,7 +114,22 @@ static void setupSdCard() {
 	engineConfiguration->spi5misoPin = Gpio::F8;
 	engineConfiguration->spi5mosiPin = Gpio::F9;
 }
+static void customBoardDefaultConfiguration() {
+	setInjectorPins();
+	setIgnitionPins();
+	setupSdCard();
+	setupDefaultSensorInputs();
+	setupEtb();
+	setupVbatt();
+	
+	engineConfiguration->canTxPin = Gpio::D1;
+	engineConfiguration->canRxPin = Gpio::D0;
+	engineConfiguration->can2RxPin = Gpio::B12;
+	engineConfiguration->can2TxPin = Gpio::B13;
+	engineConfiguration->lps25BaroSensorScl = Gpio::B10;
+	engineConfiguration->lps25BaroSensorSda = Gpio::B11;
 
+}
 void setup_custom_board_overrides() {
     custom_board_DefaultConfiguration = customBoardDefaultConfiguration;
 }
