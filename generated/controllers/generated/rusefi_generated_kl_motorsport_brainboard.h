@@ -58,8 +58,8 @@
 #define adc_channel_e_EFI_ADC_ERROR 50
 #define adc_channel_e_EFI_ADC_NONE 0
 #define adc_channel_e_EFI_ADC_TOTAL_CHANNELS 49
-#define adc_channel_e_enum 0="NONE",2="Analog Inputs 1 (A1)",11="Analog Inputs 10 (C0)",14="Analog Inputs 13 (C3)",15="Analog Inputs 14 (C4)",16="Analog Inputs 15 (C5)",3="Analog Inputs 2 (A2)",4="Analog Inputs 3 (A3)",5="Analog Inputs 4 (A4)",7="Analog Inputs 6 (A6)",8="Analog Inputs 7 (A7)",10="Analog Inputs 9 (B1)",9="On-board BARO (B0)",1="On-board Battery Sense (A0)",6="On-board MAP (A5)",12="Primary On-board O2 (C1)",13="Secondary On-board O2 (C2)"
-#define adc_channel_e_fullenum "NONE","On-board Battery Sense (A0)","Analog Inputs 1 (A1)","Analog Inputs 2 (A2)","Analog Inputs 3 (A3)","Analog Inputs 4 (A4)","On-board MAP (A5)","Analog Inputs 6 (A6)","Analog Inputs 7 (A7)","On-board BARO (B0)","Analog Inputs 9 (B1)","Analog Inputs 10 (C0)","Primary On-board O2 (C1)","Secondary On-board O2 (C2)","Analog Inputs 13 (C3)","Analog Inputs 14 (C4)","Analog Inputs 15 (C5)"
+#define adc_channel_e_enum 0="NONE",2="Entree Analog  1 (A1)",14="Entree Analog 10 (C3)",1="Entree Analog 11 (A0)",3="Entree Analog 2 (A2)",4="Entree Analog 3 (A3)",5="Entree Analog 4 (A4)",6="Entree Analog 5 (A5)",7="Entree Analog 6 (A6)",11="Entree Analog 7 (C0)",12="Entree Analog 8 (C1)",13="Entree Analog 9 (C2)",15="Sonde Temperature 1 (C4)",16="Sonde Temperature 2 (C5)",9="Sonde Temperature 3 (B0)",10="Sonde Temperature 4 (B1)",8="Tension Batterie (A7)"
+#define adc_channel_e_fullenum "NONE","Entree Analog 11 (A0)","Entree Analog  1 (A1)","Entree Analog 2 (A2)","Entree Analog 3 (A3)","Entree Analog 4 (A4)","Entree Analog 5 (A5)","Entree Analog 6 (A6)","Tension Batterie (A7)","Sonde Temperature 3 (B0)","Sonde Temperature 4 (B1)","Entree Analog 7 (C0)","Entree Analog 8 (C1)","Entree Analog 9 (C2)","Entree Analog 10 (C3)","Sonde Temperature 1 (C4)","Sonde Temperature 2 (C5)"
 #define ADC_CHANNEL_NONE 0
 #define afr_sensor_s_size 20
 #define air_pressure_sensor_config_s_size 12
@@ -175,8 +175,8 @@
 #define boostType_e_auto_enum 0="OPEN_LOOP",1="CLOSED_LOOP"
 #define boostType_e_CLOSED_LOOP 1
 #define boostType_e_OPEN_LOOP 0
-#define brain_input_pin_e_enum 0="NONE",68="VR/Hall 1 (E2)",69="VR/Hall 2 (E3)",70="VR/Hall 3 (E4)"
-#define brain_input_pin_e_fullenum "NONE","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","VR/Hall 1 (E2)","VR/Hall 2 (E3)","VR/Hall 3 (E4)"
+#define brain_input_pin_e_enum 0="NONE",83="Digital Input 5 (F1)",77="Entree Digital 1 (E11)",78="Entree Digital 2 (E12)",79="Entree Digital 3 (E13)",80="Entree Digital 4 (E14)",81="Entree Digital 5 (E15)",40="Entree Digital 6 (C6)",73="Spare Entree Digital 1 (E7)",74="Spare Entree Digital 2 (E8)"
+#define brain_input_pin_e_fullenum "NONE","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","Entree Digital 6 (C6)","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","Spare Entree Digital 1 (E7)","Spare Entree Digital 2 (E8)","INVALID","INVALID","Entree Digital 1 (E11)","Entree Digital 2 (E12)","Entree Digital 3 (E13)","Entree Digital 4 (E14)","Entree Digital 5 (E15)","INVALID","Digital Input 5 (F1)"
 #define brain_pin_diag_e_PIN_DRIVER_OFF 0x20
 #define brain_pin_diag_e_PIN_DRIVER_OVERTEMP 0x10
 #define brain_pin_diag_e_PIN_OK 0
@@ -1428,8 +1428,8 @@
 #define operation_mode_e_FOUR_STROKE_TWELVE_TIMES_CRANK_SENSOR 6
 #define operation_mode_e_OM_NONE 0
 #define operation_mode_e_TWO_STROKE 3
-#define output_pin_e_enum 0="NONE",32="B14 Output"
-#define output_pin_e_fullenum "NONE","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","B14 Output"
+#define output_pin_e_enum 0="NONE",100="Allumage 1 (G2)",43="Allumage 10 (C9)",53="Allumage 11 (D3)",54="Allumage 12 (D4)",101="Allumage 2 (G3)",102="Allumage 3 (G4)",103="Allumage 4 (G5)",104="Allumage 5 (G6)",105="Allumage 6 (G7)",106="Allumage 7 (G8)",41="Allumage 8 (C7)",42="Allumage 9 (C8)",62="DBW 1 Control (D12)",60="DBW 1 Direction (D10)",61="DBW 1 Disable (D11)",67="Sortie Basse 1 (E1)",111="Sortie Basse 10 (G13)",110="Sortie Basse 11 (G12)",109="Sortie Basse 12 (G11)",66="Sortie Basse 2 (E0)",27="Sortie Basse 3 (B9)",26="Sortie Basse 4 (B8)",25="Sortie Basse 5 (B7)",24="Sortie Basse 6 (B6)",23="Sortie Basse 7 (B5)",22="Sortie Basse 8 (B4)",112="Sortie Basse 9 (G14)",108="Sortie Basse HC 1 (G10)",107="Sortie Basse HC 2 (G9)",57="Sortie Basse HC 3 (D7)",68="Sortie Basse HC 4 (E2)",64="Spare 1 (D14)",65="Spare 2 (D15)",10="Spare 3 (A8)",11="Spare 4 (A9)"
+#define output_pin_e_fullenum "NONE","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","Spare 3 (A8)","Spare 4 (A9)","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","Sortie Basse 8 (B4)","Sortie Basse 7 (B5)","Sortie Basse 6 (B6)","Sortie Basse 5 (B7)","Sortie Basse 4 (B8)","Sortie Basse 3 (B9)","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","Allumage 8 (C7)","Allumage 9 (C8)","Allumage 10 (C9)","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","Allumage 11 (D3)","Allumage 12 (D4)","INVALID","INVALID","Sortie Basse HC 3 (D7)","INVALID","INVALID","DBW 1 Direction (D10)","DBW 1 Disable (D11)","DBW 1 Control (D12)","INVALID","Spare 1 (D14)","Spare 2 (D15)","Sortie Basse 2 (E0)","Sortie Basse 1 (E1)","Sortie Basse HC 4 (E2)","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","Allumage 1 (G2)","Allumage 2 (G3)","Allumage 3 (G4)","Allumage 4 (G5)","Allumage 5 (G6)","Allumage 6 (G7)","Allumage 7 (G8)","Sortie Basse HC 2 (G9)","Sortie Basse HC 1 (G10)","Sortie Basse 12 (G11)","Sortie Basse 11 (G12)","Sortie Basse 10 (G13)","Sortie Basse 9 (G14)"
 #define PACK_ADD_TEMPERATURE 40
 #define PACK_MULT_AFR 1000
 #define PACK_MULT_AFR_CFG 10
@@ -1536,7 +1536,7 @@
 #define SentInput_NONE 0
 #define show_tcu_gauges false
 #define show_vvt_output_pin true
-#define SIGNATURE_HASH 1892580258
+#define SIGNATURE_HASH 1870752401
 #define SIMULATOR_TUNE_BIN_FILE_NAME "generated/simulator_tune_image.bin"
 #define SIMULATOR_TUNE_BIN_FILE_NAME_PREFIX "generated/simulator_tune_image"
 #define SIMULATOR_TUNE_BIN_FILE_NAME_SUFFIX ".bin"
@@ -1570,8 +1570,8 @@
 #define stft_state_e_stftDisabledTpsAccel 8
 #define stft_state_e_stftDisabledTuning 2
 #define stft_state_e_stftEnabled 0
-#define switch_input_pin_e_enum 0="NONE",68="VR/Hall 1 (E2)",69="VR/Hall 2 (E3)",70="VR/Hall 3 (E4)"
-#define switch_input_pin_e_fullenum "NONE","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","VR/Hall 1 (E2)","VR/Hall 2 (E3)","VR/Hall 3 (E4)"
+#define switch_input_pin_e_enum 0="NONE",83="Digital Input 5 (F1)",77="Entree Digital 1 (E11)",78="Entree Digital 2 (E12)",79="Entree Digital 3 (E13)",80="Entree Digital 4 (E14)",81="Entree Digital 5 (E15)",40="Entree Digital 6 (C6)",73="Spare Entree Digital 1 (E7)",74="Spare Entree Digital 2 (E8)"
+#define switch_input_pin_e_fullenum "NONE","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","Entree Digital 6 (C6)","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","Spare Entree Digital 1 (E7)","Spare Entree Digital 2 (E8)","INVALID","INVALID","Entree Digital 1 (E11)","Entree Digital 2 (E12)","Entree Digital 3 (E13)","Entree Digital 4 (E14)","Entree Digital 5 (E15)","INVALID","Digital Input 5 (F1)"
 #define TABLE_2_LOAD_SIZE 8
 #define TABLE_2_RPM_SIZE 8
 #define TABLE_3_LOAD_SIZE 8
@@ -2102,7 +2102,7 @@
 #define ts_show_wastegate_sensor true
 #define ts_show_wbo_canbus_index true
 #define ts_show_wbo_canbus_set_index true
-#define TS_SIGNATURE "rusEFI main.2025.10.05.kl_motorsport_brainboard.1892580258"
+#define TS_SIGNATURE "rusEFI main.2025.10.05.kl_motorsport_brainboard.1870752401"
 #define TS_SIMULATE_CAN '>'
 #define TS_SIMULATE_CAN_char >
 #define TS_TEST_COMMAND 't'
