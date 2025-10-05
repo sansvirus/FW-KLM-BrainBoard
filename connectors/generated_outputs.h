@@ -4,6 +4,74 @@
 #pragma once
 
 Gpio GENERATED_OUTPUTS = {
-	Gpio::B14, // B14 Output
-// "B14 Output",
+	Gpio::G2, // Allumage 1 (G2)
+	Gpio::G3, // Allumage 2 (G3)
+	Gpio::G4, // Allumage 3 (G4)
+	Gpio::G5, // Allumage 4 (G5)
+	Gpio::G6, // Allumage 5 (G6)
+	Gpio::G7, // Allumage 6 (G7)
+	Gpio::G8, // Allumage 7 (G8)
+	Gpio::C7, // Allumage 8 (C7)
+	Gpio::C8, // Allumage 9 (C8)
+	Gpio::C9, // Allumage 10 (C9)
+	Gpio::D3, // Allumage 11 (D3)
+	Gpio::D4, // Allumage 12 (D4)
+	Gpio::E1, // Sortie Basse 1 (E1)
+	Gpio::E0, // Sortie Basse 2 (E0)
+	Gpio::B9, // Sortie Basse 3 (B9)
+	Gpio::B8, // Sortie Basse 4 (B8)
+	Gpio::B7, // Sortie Basse 5 (B7)
+	Gpio::B6, // Sortie Basse 6 (B6)
+	Gpio::B5, // Sortie Basse 7 (B5)
+	Gpio::B4, // Sortie Basse 8 (B4)
+	Gpio::G14, // Sortie Basse 9 (G14)
+	Gpio::G13, // Sortie Basse 10 (G13)
+	Gpio::G12, // Sortie Basse 11 (G12)
+	Gpio::G11, // Sortie Basse 12 (G11)
+	Gpio::G10, // Sortie Basse HC 1 (G10)
+	Gpio::G9, // Sortie Basse HC 2 (G9)
+	Gpio::D7, // Sortie Basse HC 3 (D7)
+	Gpio::E2, // Sortie Basse HC 4 (E2)
+	Gpio::D14, // Spare 1 (D14)
+	Gpio::D15, // Spare 2 (D15)
+	Gpio::A8, // Spare 3 (A8)
+	Gpio::A9, // Spare 4 (A9)
+	Gpio::D11, // DBW 1 Disable (D11)
+	Gpio::D12, // DBW 1 Control (D12)
+	Gpio::D10, // DBW 1 Direction (D10)
+// "Allumage 1 (G2)",
+// "Allumage 2 (G3)",
+// "Allumage 3 (G4)",
+// "Allumage 4 (G5)",
+// "Allumage 5 (G6)",
+// "Allumage 6 (G7)",
+// "Allumage 7 (G8)",
+// "Allumage 8 (C7)",
+// "Allumage 9 (C8)",
+// "Allumage 10 (C9)",
+// "Allumage 11 (D3)",
+// "Allumage 12 (D4)",
+// "Sortie Basse 1 (E1)",
+// "Sortie Basse 2 (E0)",
+// "Sortie Basse 3 (B9)",
+// "Sortie Basse 4 (B8)",
+// "Sortie Basse 5 (B7)",
+// "Sortie Basse 6 (B6)",
+// "Sortie Basse 7 (B5)",
+// "Sortie Basse 8 (B4)",
+// "Sortie Basse 9 (G14)",
+// "Sortie Basse 10 (G13)",
+// "Sortie Basse 11 (G12)",
+// "Sortie Basse 12 (G11)",
+// "Sortie Basse HC 1 (G10)",
+// "Sortie Basse HC 2 (G9)",
+// "Sortie Basse HC 3 (D7)",
+// "Sortie Basse HC 4 (E2)",
+// "Spare 1 (D14)",
+// "Spare 2 (D15)",
+// "Spare 3 (A8)",
+// "Spare 4 (A9)",
+// "DBW 1 Disable (D11)",
+// "DBW 1 Control (D12)",
+// "DBW 1 Direction (D10)",
 }
