@@ -19,22 +19,21 @@ DDEFS += -DOPENBLT_CAN_RX_PIN=0
 DDEFS += -DOPENBLT_CAN_TX_PORT=GPIOD
 DDEFS += -DOPENBLT_CAN_TX_PIN=1
 
-ifeq ($(PROJECT_CPU),ARCH_STM32F7)
-  # todo: KNOCK_SPECTROGRAM to use big_buffer
+# todo: KNOCK_SPECTROGRAM to use big_buffer
 	DDEFS += -DKNOCK_SPECTROGRAM=TRUE
 	DDEFS += -DLUA_RX_MAX_FILTER_COUNT=96
 
-  # technical debt: UI uses separate ts_show_tcu flag
+# technical debt: UI uses separate ts_show_tcu flag
   DDEFS += -DEFI_TCU=TRUE
 
-	ifeq ($(EFI_LUA_LOOKUP),)
+  ifeq ($(EFI_LUA_LOOKUP),)
     EFI_LUA_LOOKUP = TRUE
   endif
   DDEFS += -DEFI_LUA_LOOKUP=$(EFI_LUA_LOOKUP)
 
-	# note #define EFI_EMBED_INI_MSD FALSE in F7 features
+# note #define EFI_EMBED_INI_MSD FALSE in F7 features
 	ifeq ($(DEBUG_LEVEL_OPT),)
 		DEBUG_LEVEL_OPT = -Os -ggdb -g
 	endif
 $(error Unsupported PROJECT_CPU [$(PROJECT_CPU)])
-endif
+
