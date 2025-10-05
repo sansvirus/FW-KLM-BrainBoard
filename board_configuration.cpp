@@ -1,43 +1,26 @@
-/**
- * @file boards/proteus/board_configuration.cpp
- *
- * @brief Configuration defaults for the Proteus board
- *
- * @author Matthew Kennedy, (c) 2019
- */
-
 #include "pch.h"
-#include "proteus_meta.h"
 #include "board_overrides.h"
 
 static const brain_pin_e injPins[] = {
-    Gpio::PROTEUS_LS_1,
-	Gpio::PROTEUS_LS_2,
-	Gpio::PROTEUS_LS_3,
-	Gpio::PROTEUS_LS_4,
-	Gpio::PROTEUS_LS_5,
-	Gpio::PROTEUS_LS_6,
-	Gpio::PROTEUS_LS_7,
-	Gpio::PROTEUS_LS_8,
-	Gpio::PROTEUS_LS_9,
-	Gpio::PROTEUS_LS_10,
-	Gpio::PROTEUS_LS_11,
-	Gpio::PROTEUS_LS_12
+    Gpio::E1,
+	Gpio::E0,
+	Gpio::B9,
+	Gpio::B8,
+	Gpio::B7,
+	Gpio::B6,
+	Gpio::B5,
+	Gpio::B4,
 };
 
 static const brain_pin_e ignPins[] = {
-	Gpio::PROTEUS_IGN_1,
-	Gpio::PROTEUS_IGN_2,
-	Gpio::PROTEUS_IGN_3,
-	Gpio::PROTEUS_IGN_4,
-	Gpio::PROTEUS_IGN_5,
-	Gpio::PROTEUS_IGN_6,
-	Gpio::PROTEUS_IGN_7,
-	Gpio::PROTEUS_IGN_8,
-	Gpio::PROTEUS_IGN_9,
-	Gpio::PROTEUS_IGN_10,
-	Gpio::PROTEUS_IGN_11,
-	Gpio::PROTEUS_IGN_12,
+	Gpio::G2,
+	Gpio::G3,
+	Gpio::G4,
+	Gpio::G5,
+	Gpio::G6,
+	Gpio::G7,
+	Gpio::G8,
+	Gpio::C7,
 };
 
 static void setInjectorPins() {
@@ -104,20 +87,20 @@ static void setupEtb() {
 static void setupDefaultSensorInputs() {
 	// trigger inputs
 	// Digital channel 1 as default - others not set
-	engineConfiguration->triggerInputPins[0] = PROTEUS_DIGITAL_1;
+	engineConfiguration->triggerInputPins[0] = Gpio::E11;
 	engineConfiguration->camInputs[0] = Gpio::Unassigned;
 
 	engineConfiguration->triggerInputPins[1] = Gpio::Unassigned;
 
 
-	engineConfiguration->clt.adcChannel = PROTEUS_IN_CLT;
-	engineConfiguration->iat.adcChannel = PROTEUS_IN_IAT;
-	engineConfiguration->tps1_1AdcChannel = PROTEUS_IN_TPS;
-	engineConfiguration->map.sensor.hwChannel = PROTEUS_IN_MAP;
+	engineConfiguration->clt.adcChannel = Gpio::Unassigned;
+	engineConfiguration->iat.adcChannel = Gpio::Unassigned;
+	engineConfiguration->tps1_1AdcChannel = Gpio::Unassigned;
+	engineConfiguration->map.sensor.hwChannel = Gpio::Unassigned;
 
     // see also enableAemXSeries
 	// pin #28 WBO AFR "Analog Volt 10"
-	engineConfiguration->afr.hwChannel = PROTEUS_IN_ANALOG_VOLT_10;
+	engineConfiguration->afr.hwChannel = Gpio::Unassigned;
 }
 
 static void setupSdCard() {
@@ -139,8 +122,8 @@ static void proteus_boardConfigOverrides() {
 	setupSdCard();
 	setupVbatt();
 
-	engineConfiguration->clt.config.bias_resistor = PROTEUS_DEFAULT_AT_PULLUP;
-	engineConfiguration->iat.config.bias_resistor = PROTEUS_DEFAULT_AT_PULLUP;
+	engineConfiguration->clt.config.bias_resistor = 2700;
+	engineConfiguration->iat.config.bias_resistor = 2700;
 
 	engineConfiguration->canTxPin = Gpio::D1;
 	engineConfiguration->canRxPin = Gpio::D0;
@@ -151,13 +134,6 @@ static void proteus_boardConfigOverrides() {
 	engineConfiguration->lps25BaroSensorSda = Gpio::B11;
 }
 
-/**
- * @brief   Board-specific configuration defaults.
- *
- * See also setDefaultEngineConfiguration
- *
-
- */
 static void proteus_boardDefaultConfiguration() {
 	setInjectorPins();
 	setIgnitionPins();
@@ -170,212 +146,4 @@ static void proteus_boardDefaultConfiguration() {
 
 	engineConfiguration->enableSoftwareKnock = true;
 
-#if HW_PROTEUS & EFI_PROD_CODE
-	engineConfiguration->mainRelayPin = Gpio::PROTEUS_LS_12;
-	engineConfiguration->fanPin = Gpio::PROTEUS_LS_11;
-	engineConfiguration->fuelPumpPin = Gpio::PROTEUS_LS_10;
-#endif // HW_PROTEUS
 
-	// If we're running as hardware CI, borrow a few extra pins for that
-#ifdef HARDWARE_CI
-	engineConfiguration->triggerSimulatorPins[0] = Gpio::G3;
-	engineConfiguration->triggerSimulatorPins[1] = Gpio::G2;
-#endif
-}
-
-void boardPrepareForStop() {
-	// Wake on the CAN RX pin
-	palEnableLineEvent(PAL_LINE(GPIOD, 0), PAL_EVENT_MODE_RISING_EDGE);
-}
-
-#if HW_PROTEUS
-static Gpio PROTEUS_SLINGSHOT_OUTPUTS[] = {
-    Gpio::PROTEUS_LS_1, // inj 1
-    Gpio::PROTEUS_LS_2, // inj 2
-    Gpio::PROTEUS_LS_3, // inj 3
-    Gpio::PROTEUS_LS_4, // inj 4
-};
-
-static Gpio PROTEUS_SBC_OUTPUTS[] = {
-    Gpio::PROTEUS_LS_14, // inj 1 four times
-    Gpio::PROTEUS_LS_14, // inj 1 four times
-    Gpio::PROTEUS_LS_14, // inj 1 four times
-    Gpio::PROTEUS_LS_14, // inj 1 four times
-
-    Gpio::PROTEUS_LS_15, // inj 4 four times
-    Gpio::PROTEUS_LS_15, // inj 4 four times
-    Gpio::PROTEUS_LS_15, // inj 4 four times
-    Gpio::PROTEUS_LS_15, // inj 4 four times
-
-};
-
-static Gpio PROTEUS_M73_OUTPUTS[] = {
-    Gpio::PROTEUS_LS_1, // inj 1
-    Gpio::PROTEUS_LS_2, // inj 2
-    Gpio::PROTEUS_LS_3,
-    Gpio::PROTEUS_LS_4,
-    Gpio::PROTEUS_LS_5,
-    Gpio::PROTEUS_LS_6,
-    Gpio::PROTEUS_LS_7,
-    Gpio::PROTEUS_LS_8,
-    Gpio::PROTEUS_LS_9, // inj 9
-    Gpio::PROTEUS_LS_10, // inj 10
-    Gpio::PROTEUS_LS_11, // inj 11
-    Gpio::PROTEUS_LS_12, // inj 12
-    Gpio::PROTEUS_LS_14, // starter control or aux output
-    Gpio::PROTEUS_LS_15, // radiator fan relay output white
-
-
-    //Gpio::PROTEUS_LS_13, // main relay
-    //Gpio::PROTEUS_LS_16, // main relay
-};
-
-static Gpio PROTEUS_SUBARU_OUTPUTS[] = {
-    Gpio::PROTEUS_LS_1, // inj 1
-    Gpio::PROTEUS_LS_2, // inj 2
-    Gpio::PROTEUS_LS_3, // inj 3
-    Gpio::PROTEUS_LS_4, // inj 4
-    Gpio::PROTEUS_LS_12, // main relay
-    Gpio::PROTEUS_LS_14, // starter
-};
-
-static Gpio PROTEUS_CANAM_OUTPUTS[] = {
-    Gpio::PROTEUS_LS_1, // inj 1
-    Gpio::PROTEUS_LS_2, // inj 2
-    Gpio::PROTEUS_LS_3, // inj 3
-    Gpio::PROTEUS_LS_12, // main relay
-    Gpio::PROTEUS_LS_14, // starter
-    Gpio::PROTEUS_LS_15, // intercooler fan
-    Gpio::PROTEUS_LS_4, // accessories relay
-	Gpio::PROTEUS_IGN_1,
-	Gpio::PROTEUS_IGN_2,
-	Gpio::PROTEUS_IGN_3,
-};
-
-static Gpio PROTEUS_HARLEY_OUTPUTS[] = {
-    Gpio::PROTEUS_LS_1,
-    Gpio::PROTEUS_LS_2,
-	Gpio::PROTEUS_IGN_1,
-	Gpio::PROTEUS_IGN_2,
-	Gpio::PROTEUS_IGN_8, // ACR
-	Gpio::PROTEUS_IGN_9, // ACR2
-};
-
-int getBoardMetaLowSideOutputsCount() {
-    if (engineConfiguration->engineType == engine_type_e::SUBARU_2011) {
-        return getBoardMetaOutputsCount();
-    }
-    if (engineConfiguration->engineType == engine_type_e::MAVERICK_X3) {
-        return getBoardMetaOutputsCount();
-    }
-    if (engineConfiguration->engineType == engine_type_e::HARLEY) {
-        return getBoardMetaOutputsCount();
-    }
-    if (engineConfiguration->engineType == engine_type_e::GM_SBC) {
-        return getBoardMetaOutputsCount();
-    }
-    if (engineConfiguration->engineType == engine_type_e::ME17_9_MISC) {
-        return getBoardMetaOutputsCount();
-    }
-    return 16;
-}
-
-static Gpio PROTEUS_OUTPUTS[] = {
-Gpio::PROTEUS_LS_1,
-Gpio::PROTEUS_LS_2,
-Gpio::PROTEUS_LS_3,
-Gpio::PROTEUS_LS_4,
-Gpio::PROTEUS_LS_5,
-Gpio::PROTEUS_LS_6,
-Gpio::PROTEUS_LS_7,
-Gpio::PROTEUS_LS_8,
-Gpio::PROTEUS_LS_9,
-Gpio::PROTEUS_LS_10,
-Gpio::PROTEUS_LS_11,
-Gpio::PROTEUS_LS_12,
-Gpio::PROTEUS_LS_13,
-Gpio::PROTEUS_LS_14,
-Gpio::PROTEUS_LS_15,
-Gpio::PROTEUS_LS_16,
-	Gpio::PROTEUS_IGN_1,
-	Gpio::PROTEUS_IGN_2,
-	Gpio::PROTEUS_IGN_3,
-	Gpio::PROTEUS_IGN_4,
-	Gpio::PROTEUS_IGN_5,
-	Gpio::PROTEUS_IGN_6,
-	Gpio::PROTEUS_IGN_7,
-	Gpio::PROTEUS_IGN_8,
-	Gpio::PROTEUS_IGN_9,
-	Gpio::PROTEUS_IGN_10,
-	Gpio::PROTEUS_IGN_11,
-	Gpio::PROTEUS_IGN_12,
-	Gpio::PROTEUS_HS_1,
-	Gpio::PROTEUS_HS_2,
-	Gpio::PROTEUS_HS_3,
-	Gpio::PROTEUS_HS_4
-};
-
-int getBoardMetaOutputsCount() {
-    if (engineConfiguration->engineType == engine_type_e::SUBARU_2011) {
-        return efi::size(PROTEUS_SUBARU_OUTPUTS);
-    }
-    if (engineConfiguration->engineType == engine_type_e::MAVERICK_X3) {
-        return efi::size(PROTEUS_CANAM_OUTPUTS);
-    }
-    if (engineConfiguration->engineType == engine_type_e::ME17_9_MISC) {
-        return efi::size(PROTEUS_SLINGSHOT_OUTPUTS);
-    }
-    if (engineConfiguration->engineType == engine_type_e::HARLEY) {
-        return efi::size(PROTEUS_HARLEY_OUTPUTS);
-    }
-    if (engineConfiguration->engineType == engine_type_e::GM_SBC) {
-        return efi::size(PROTEUS_SBC_OUTPUTS);
-    }
-    if (engineConfiguration->engineType == engine_type_e::PROTEUS_BMW_M73) {
-        return efi::size(PROTEUS_M73_OUTPUTS);
-    }
-    return efi::size(PROTEUS_OUTPUTS);
-}
-
-int getBoardMetaDcOutputsCount() {
-    if (engineConfiguration->engineType == engine_type_e::PROTEUS_BMW_M73) {
-        return 2;
-    }
-    if (engineConfiguration->engineType == engine_type_e::ME17_9_MISC ||
-        engineConfiguration->engineType == engine_type_e::HARLEY ||
-        engineConfiguration->engineType == engine_type_e::SUBARU_2011 ||
-        engineConfiguration->engineType == engine_type_e::MAVERICK_X3
-        ) {
-        return 1;
-    }
-    return 1;
-/*    return 2; proteus has two h-b ridges but stim board is short on channels to test :( */
-}
-
-Gpio* getBoardMetaOutputs() {
-    if (engineConfiguration->engineType == engine_type_e::SUBARU_2011) {
-        return PROTEUS_SUBARU_OUTPUTS;
-    }
-    if (engineConfiguration->engineType == engine_type_e::MAVERICK_X3) {
-        return PROTEUS_CANAM_OUTPUTS;
-    }
-    if (engineConfiguration->engineType == engine_type_e::ME17_9_MISC) {
-        return PROTEUS_SLINGSHOT_OUTPUTS;
-    }
-    if (engineConfiguration->engineType == engine_type_e::HARLEY) {
-        return PROTEUS_HARLEY_OUTPUTS;
-    }
-    if (engineConfiguration->engineType == engine_type_e::GM_SBC) {
-        return PROTEUS_SBC_OUTPUTS;
-    }
-    if (engineConfiguration->engineType == engine_type_e::PROTEUS_BMW_M73) {
-        return PROTEUS_M73_OUTPUTS;
-    }
-    return PROTEUS_OUTPUTS;
-}
-#endif // HW_PROTEUS
-
-void setup_custom_board_overrides() {
-	custom_board_DefaultConfiguration = proteus_boardDefaultConfiguration;
-	custom_board_ConfigOverrides =  proteus_boardConfigOverrides;
-}
