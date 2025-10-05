@@ -39,6 +39,7 @@ engineConfiguration->ignitionPins[0] = Gpio::C7;
 static void setupDefaultSensorInputs() {
 engineConfiguration->clt.config.bias_resistor = 2700;
 engineConfiguration->iat.config.bias_resistor = 2700;
+engineConfiguration->triggerInputPins[0] = Gpio::E11;
 }
 
 static void setupVbatt() {
@@ -79,25 +80,6 @@ static void setupEtb() {
 
 	// we only have pwm/dir, no dira/dirb
 	engineConfiguration->etb_use_two_wires = false;
-}
-
-static void setupDefaultSensorInputs() {
-	// trigger inputs
-	// Digital channel 1 as default - others not set
-	engineConfiguration->triggerInputPins[0] = Gpio::E11;
-	engineConfiguration->camInputs[0] = Gpio::Unassigned;
-
-	engineConfiguration->triggerInputPins[1] = Gpio::Unassigned;
-
-
-	engineConfiguration->clt.adcChannel = Gpio::Unassigned;
-	engineConfiguration->iat.adcChannel = Gpio::Unassigned;
-	engineConfiguration->tps1_1AdcChannel = Gpio::Unassigned;
-	engineConfiguration->map.sensor.hwChannel = Gpio::Unassigned;
-
-    // see also enableAemXSeries
-	// pin #28 WBO AFR "Analog Volt 10"
-	engineConfiguration->afr.hwChannel = Gpio::Unassigned;
 }
 
 static void setupSdCard() {
