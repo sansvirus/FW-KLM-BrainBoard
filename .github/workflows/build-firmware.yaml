@@ -1,10 +1,12 @@
 name: Create Board Firmware
+
 on:
-   schedule:
+  schedule:
     - cron: '0 0 * * *' # build fresh every midnight (that help local compilation by having local and remote date in signature match)
- push:
-#  pull_request:
-workflow_dispatch:
+  push:
+  #  pull_request:
+  workflow_dispatch:
+
 jobs:
   build-firmware:
     runs-on: ubuntu-latest
