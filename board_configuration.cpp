@@ -1,6 +1,18 @@
 #include "pch.h"
 #include "board_overrides.h"
 
+// PE3 is error LED, configured in board.mk
+Gpio getCommsLedPin() {
+	return Gpio::E4;
+}
+
+Gpio getRunningLedPin() {
+	return Gpio::E5;
+}
+
+Gpio getWarningLedPin() {
+	return Gpio::E6;
+}
 static void customBoardDefaultConfiguration() {
 
 engineConfiguration->injectionPins[0] = Gpio::E1;
@@ -31,18 +43,7 @@ engineConfiguration->lps25BaroSensorScl = Gpio::B10;
 engineConfiguration->lps25BaroSensorSda = Gpio::B11;
 
 
-// PE3 is error LED, configured in board.mk
-Gpio getCommsLedPin() {
-	return Gpio::E4;
-}
 
-Gpio getRunningLedPin() {
-	return Gpio::E5;
-}
-
-Gpio getWarningLedPin() {
-	return Gpio::E6;
-}
 
 static void setupVbatt() {
 	// 5.6k high side/10k low side = 1.56 ratio divider
@@ -120,17 +121,5 @@ static void setupSdCard() {
 
 void setup_custom_board_overrides() {
     custom_board_DefaultConfiguration = customBoardDefaultConfiguration;
-
-	setInjectorPins();
-	setIgnitionPins();
-	setupEtb();
-	setupSdCard();
-	setupVbatt();
-	engineConfiguration->isSdCardEnabled = true;
-
-	// "required" hardware is done - set some reasonable defaults
-	setupDefaultSensorInputs();
-
-	engineConfiguration->enableSoftwareKnock = true;
 }
 
