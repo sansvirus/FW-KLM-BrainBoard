@@ -33,7 +33,7 @@ pins:
     
   - id: C8
     class: outputs
-    ts_name:Non Cable 3 (C8)
+    ts_name: Non Cable 3 (C8)
     
   - id: C9
     class: outputs
