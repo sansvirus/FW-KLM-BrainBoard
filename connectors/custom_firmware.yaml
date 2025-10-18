@@ -25,27 +25,27 @@ pins:
     
   - id: G8
     class: outputs
-    ts_name: Non Cable (G8)
+    ts_name: Non Cable 1 (G8)
     
   - id: C7
     class: outputs
-    ts_name: Non Cable (C7)
+    ts_name: Non Cable 2 (C7)
     
   - id: C8
     class: outputs
-    ts_name:Non Cable (C8)
+    ts_name:Non Cable 3 (C8)
     
   - id: C9
     class: outputs
-    ts_name: Non Cable (C9)
+    ts_name: Non Cable 4 (C9)
     
   - id: D3
     class: outputs
-    ts_name: Non Cable (D3)
+    ts_name: Non Cable 5 (D3)
     
   - id: D4
     class: outputs
-    ts_name: Non Cable (D4)
+    ts_name: Non Cable 6 (D4)
     
   - id: E1
     class: outputs
@@ -73,11 +73,11 @@ pins:
     
   - id: B5
     class: outputs
-    ts_name: Non Cable (B5)
+    ts_name: Non Cable 7 (B5)
     
   - id: B4
     class: outputs
-    ts_name: Non Cable (B4)
+    ts_name: Non Cable 8 (B4)
     
   - id: G14
     class: outputs
