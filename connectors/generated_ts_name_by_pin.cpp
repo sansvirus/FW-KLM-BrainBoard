@@ -6,51 +6,7 @@
 // see comments at declaration in pin_repository.h
 const char * getBoardSpecificPinName(brain_pin_e brainPin) {
 	switch(brainPin) {
-		case Gpio::A8: return "Spare 3 (A8)";
-		case Gpio::A9: return "Spare 4 (A9)";
-		case Gpio::B4: return "Sortie Basse 8 (B4)";
-		case Gpio::B5: return "Sortie Basse 7 (B5)";
-		case Gpio::B6: return "Sortie Basse 6 (B6)";
-		case Gpio::B7: return "Sortie Basse 5 (B7)";
-		case Gpio::B8: return "Sortie Basse 4 (B8)";
-		case Gpio::B9: return "Sortie Basse 3 (B9)";
-		case Gpio::C6: return "Entree Digital 6 (C6)";
-		case Gpio::C7: return "Allumage 8 (C7)";
-		case Gpio::C8: return "Allumage 9 (C8)";
-		case Gpio::C9: return "Allumage 10 (C9)";
-		case Gpio::D10: return "DBW 1 Direction (D10)";
-		case Gpio::D11: return "DBW 1 Disable (D11)";
-		case Gpio::D12: return "DBW 1 Control (D12)";
-		case Gpio::D14: return "Spare 1 (D14)";
-		case Gpio::D15: return "Spare 2 (D15)";
-		case Gpio::D3: return "Allumage 11 (D3)";
-		case Gpio::D4: return "Allumage 12 (D4)";
-		case Gpio::D7: return "Sortie Basse HC 3 (D7)";
-		case Gpio::E0: return "Sortie Basse 2 (E0)";
-		case Gpio::E1: return "Sortie Basse 1 (E1)";
-		case Gpio::E11: return "Entree Digital 1 (E11)";
-		case Gpio::E12: return "Entree Digital 2 (E12)";
-		case Gpio::E13: return "Entree Digital 3 (E13)";
-		case Gpio::E14: return "Entree Digital 4 (E14)";
-		case Gpio::E15: return "Entree Digital 5 (E15)";
-		case Gpio::E2: return "Sortie Basse HC 4 (E2)";
-		case Gpio::E7: return "Spare Entree Digital 1 (E7)";
-		case Gpio::E8: return "Spare Entree Digital 2 (E8)";
-		case Gpio::F1: return "Digital Input 5 (F1)";
-		case Gpio::G10: return "Sortie Basse HC 1 (G10)";
-		case Gpio::G11: return "Sortie Basse 12 (G11)";
-		case Gpio::G12: return "Sortie Basse 11 (G12)";
-		case Gpio::G13: return "Sortie Basse 10 (G13)";
-		case Gpio::G14: return "Sortie Basse 9 (G14)";
-		case Gpio::G2: return "Allumage 1 (G2)";
-		case Gpio::G3: return "Allumage 2 (G3)";
-		case Gpio::G4: return "Allumage 3 (G4)";
-		case Gpio::G5: return "Allumage 4 (G5)";
-		case Gpio::G6: return "Allumage 5 (G6)";
-		case Gpio::G7: return "Allumage 6 (G7)";
-		case Gpio::G8: return "Allumage 7 (G8)";
-		case Gpio::G9: return "Sortie Basse HC 2 (G9)";
-		default: return nullptr;
+		
 	}
 	return nullptr;
 }
