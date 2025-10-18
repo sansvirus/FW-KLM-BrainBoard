@@ -15,25 +15,21 @@ Gpio getWarningLedPin() {
 }
 
 static void setInjectorPins() {
-engineConfiguration->injectionPins[0] = Gpio::E1;
-engineConfiguration->injectionPins[1] = Gpio::E0;
-engineConfiguration->injectionPins[2] = Gpio::B9;
-engineConfiguration->injectionPins[3] = Gpio::B8;
-engineConfiguration->injectionPins[4] = Gpio::B7;
-engineConfiguration->injectionPins[5] = Gpio::B6;
-engineConfiguration->injectionPins[6] = Gpio::B5;
-engineConfiguration->injectionPins[7] = Gpio::B4;
+engineConfiguration->injectionPins[0] = Gpio::B6;
+engineConfiguration->injectionPins[1] = Gpio::B7;
+engineConfiguration->injectionPins[2] = Gpio::B8;
+engineConfiguration->injectionPins[3] = Gpio::B9;
+engineConfiguration->injectionPins[4] = Gpio::E0;
+engineConfiguration->injectionPins[5] = Gpio::E1;
 }
 
 static void setIgnitionPins() {
 engineConfiguration->ignitionPins[0] = Gpio::G2;
-engineConfiguration->ignitionPins[1] = Gpio::G3;
-engineConfiguration->ignitionPins[2] = Gpio::G4;
-engineConfiguration->ignitionPins[3] = Gpio::G5;
-engineConfiguration->ignitionPins[4] = Gpio::G6;
+engineConfiguration->ignitionPins[1] = Gpio::G4;
+engineConfiguration->ignitionPins[2] = Gpio::G6;
+engineConfiguration->ignitionPins[3] = Gpio::G3;
+engineConfiguration->ignitionPins[4] = Gpio::G5;
 engineConfiguration->ignitionPins[5] = Gpio::G7;
-engineConfiguration->ignitionPins[6] = Gpio::G8;
-engineConfiguration->ignitionPins[7] = Gpio::C7;
 }
 
 static void setupDefaultSensorInputs() {
