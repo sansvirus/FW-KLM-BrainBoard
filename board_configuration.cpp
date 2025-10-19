@@ -96,6 +96,13 @@ static void setupSdCard() {
 	engineConfiguration->spi5misoPin = Gpio::F8;
 	engineConfiguration->spi5mosiPin = Gpio::F9;
 }
+
+static void setSerialConfigurationOverrides() {
+	engineConfiguration->binarySerialTxPin = Gpio::D5;
+	engineConfiguration->binarySerialRxPin = Gpio::D6;
+	engineConfiguration->tunerStudioSerialSpeed = SERIAL_SPEED;
+	engineConfiguration->uartConsoleSerialSpeed = SERIAL_SPEED;
+}
 static void customBoardDefaultConfiguration() {
 	setInjectorPins();
 	setIgnitionPins();
