@@ -97,7 +97,7 @@ static void setupSdCard() {
 	engineConfiguration->spi5mosiPin = Gpio::F9;
 }
 
-static void setSerialConfigurationOverrides() {
+static void setupSerial() {
 	engineConfiguration->binarySerialTxPin = Gpio::D5;
 	engineConfiguration->binarySerialRxPin = Gpio::D6;
 	engineConfiguration->tunerStudioSerialSpeed = SERIAL_SPEED;
@@ -110,6 +110,7 @@ static void customBoardDefaultConfiguration() {
 	setupDefaultSensorInputs();
 	setupEtb();
 	setupVbatt();
+	setupSerial();
 	
 	engineConfiguration->canTxPin = Gpio::D1;
 	engineConfiguration->canRxPin = Gpio::D0;
