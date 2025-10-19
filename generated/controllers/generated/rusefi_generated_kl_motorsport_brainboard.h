@@ -2106,7 +2106,7 @@
 #define ts_show_wastegate_sensor true
 #define ts_show_wbo_canbus_index true
 #define ts_show_wbo_canbus_set_index true
-#define TS_SIGNATURE "rusEFI main.2025.10.18.kl_motorsport_brainboard.3668985052"
+#define TS_SIGNATURE "rusEFI main.2025.10.19.kl_motorsport_brainboard.3668985052"
 #define TS_SIMULATE_CAN '>'
 #define TS_SIMULATE_CAN_char >
 #define TS_TEST_COMMAND 't'
