@@ -100,8 +100,6 @@ static void setupSdCard() {
 static void setupSerial() {
 	engineConfiguration->binarySerialTxPin = Gpio::D5;
 	engineConfiguration->binarySerialRxPin = Gpio::D6;
-	engineConfiguration->tunerStudioSerialSpeed = SERIAL_SPEED;
-	engineConfiguration->uartConsoleSerialSpeed = SERIAL_SPEED;
 }
 static void customBoardDefaultConfiguration() {
 	setInjectorPins();
