@@ -1,7 +1,7 @@
 #include "pch.h"
 
 #include "bmw_mfl.h"
-#include "digital_input_exti.h"
+#include "ext/rusefi/firmware/hw_layer/digital_input/digital_input_exti.h"
 
 #if EFI_BMW_MFL
 
