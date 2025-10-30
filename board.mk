@@ -1,6 +1,6 @@
 # List of all the board related files.
-BOARDCPPSRC =  $(BOARD_DIR)/board_configuration.cpp \
-	$(BOARD_DIR)/firmware/controllers/sensors/bmw_mfl.cpp
+BOARDCPPSRC =  $(BOARD_DIR)/board_configuration.cpp 
+	#$(BOARD_DIR)/firmware/controllers/sensors/bmw_mfl.cpp
    
 # see also openblt/board.mk STATUS_LED
 DDEFS += -DLED_CRITICAL_ERROR_BRAIN_PIN=Gpio::E3
@@ -25,4 +25,4 @@ DDEFS += -DOPENBLT_CAN_TX_PIN=1
 	DDEFS += -DLUA_RX_MAX_FILTER_COUNT=96
 
 
-DDEFS += -DEFI_BMW_MFL=TRUE
+# DDEFS += -DEFI_BMW_MFL=TRUE
