@@ -4991,7 +4991,7 @@ end</constant>
 </constant>
         <constant name="yesUnderstandLocking">"no"</constant>
     </page>
-    <versionInfo firmwareInfo="20251017" nPages="1" signature="rusEFI main.2025.10.30.kl_motorsport_brainboard.3552688497" version="5.0"/>
+    <versionInfo firmwareInfo="20251017" nPages="1" signature="rusEFI main.2025.10.30.kl_motorsport_brainboard.1645536088" version="5.0"/>
     <bibliography author="rusEFI 20251017" writeDate="date"/>
     <settings/>
     <userComments/>
