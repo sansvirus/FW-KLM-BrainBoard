@@ -1,6 +1,7 @@
 # List of all the board related files.
 BOARDCPPSRC =  $(BOARD_DIR)/board_configuration.cpp
-
+BOARDINC += $(BOARD_DIR)/firmware/controllers/sensors/bmw_mfl.cpp
+   
 # see also openblt/board.mk STATUS_LED
 DDEFS += -DLED_CRITICAL_ERROR_BRAIN_PIN=Gpio::E3
 DDEFS += -DEFI_HD_ACR=TRUE
