@@ -1,4 +1,9 @@
 struct_no_prefix extra_s
 bit extraBit
+brain_input_pin_e bmwMflPin;BMW E46/E39 Cruise Control buttons;
+	bit bmwMflOnLatch,"latch","momentary";Latch: toggles on press (on/off). Momentary: ON only while held.
+	bit bmwMflIoTypeLatch,"latch","momentary";Latch: toggles on press (on/off). Momentary: ON only while held.
+	bit bmwMflPlusTypeLatch,"latch","momentary";Latch: toggles on press (on/off). Momentary: ON only while held.
+	bit bmwMflMinusTypeLatch,"latch","momentary";Latch: toggles on press (on/off). Momentary: ON only while held.
 int extraInt
 end_struct
