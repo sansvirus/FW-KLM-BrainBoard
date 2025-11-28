@@ -21,7 +21,7 @@ pins:
     
   - id: G7
     class: outputs
-    ts_name: Allumage 6 (G7)
+    ts_name: Allumage Cyl 6 (G7)
     
   - id: G8
     class: outputs
