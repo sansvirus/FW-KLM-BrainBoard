@@ -17,6 +17,3 @@
 #define ts_show_ign_key_analog_input true
 #define CLT_TIMING_CURVE_SIZE 3
 #define IAT_IGN_CORR_COUNT 4
-
-#define ts_show_bmw_mfl true
-#define ts_show_bmw_ibus true
